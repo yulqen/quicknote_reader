@@ -1,3 +1,4 @@
+#include "stuff.h"
 #include <fstream>
 #include <ios>
 #include <iostream>
@@ -14,25 +15,16 @@ std::ifstream getStream(const String path)
     return f;
 }
 
-class Quick_Line
-{
-  private:
-    std::string line;
-
-  public:
-    void insert(const std::string x)
-    {
-        line = x;
-    }
-    std::string print() { return line; };
-    explicit Quick_Line(const std::string s) { line = s; };
-};
+// Adding member functions to Quick_Line
+void        Quick_Line::insert(const std::string x) { line = x; };
+std::string Quick_Line::print() { return line; };
+Quick_Line::Quick_Line(const std::string s) { line = s; };
 
 int main(int argc, char *argv[])
 {
-    String line;
+    String                  line;
     std::vector<Quick_Line> lines;
-    auto s{getStream("/home/lemon/Documents/Notes/quicknote.md")};
+    auto                    s{getStream("/home/lemon/Documents/Notes/quicknote.md")};
     if (s.is_open())
     {
         while (std::getline(s, line))
