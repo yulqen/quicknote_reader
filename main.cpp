@@ -7,8 +7,6 @@
 #include <string>
 #include <vector>
 
-using String = std::string;
-
 std::ifstream getStream(const String path)
 {
     std::ifstream f(path);
@@ -16,9 +14,9 @@ std::ifstream getStream(const String path)
 }
 
 // Adding member functions to Quick_Line
-void        Quick_Line::insert(const std::string x) { line = x; };
-std::string Quick_Line::print() { return line; };
 Quick_Line::Quick_Line(const std::string s) { line = s; };
+void        Quick_Line::insert(const std::string s) { line = s; };
+std::string Quick_Line::print() { return line; };
 
 int main(int argc, char *argv[])
 {
