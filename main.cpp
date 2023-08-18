@@ -20,6 +20,13 @@ std::string Quick_Line::print() { return line; };
 
 int main(int argc, char *argv[])
 {
+    // Check for the correct arguments passed
+    if (argc < 2)
+    {
+        std::cout << "No argument provided. Provide one." << std::endl;
+        return 0;
+    };
+
     String                  line;
     std::vector<Quick_Line> lines;
     auto                    s{getStream("/home/lemon/Documents/Notes/quicknote.md")};
